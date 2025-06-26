@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css'] // or .scss depending on what you're using
 })
 export class UserComponent {
+    selectedTab: string = 'Home';
+
+  selectTab(tab: string) {
+    this.selectedTab = tab;
+  }
+
+  
   selectedMenu = ''; // Tracks selected sidebar item
 
   recentData = [

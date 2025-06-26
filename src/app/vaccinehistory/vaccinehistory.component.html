@@ -3,16 +3,21 @@
   <table class="table table-bordered table-hover">
     <thead class="table-light">
       <tr>
+        <th>Name</th>
         <th>Vaccine Name</th>
         <th>Date </th>
         <th>Status</th>
+        <th>Download certificate</th>
+
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let vaccine of vaccinationData | slice:currentIndex:currentIndex+3">
+      <tr *ngFor="let vaccine of vaccinationData | slice:currentIndex:currentIndex+5">
+        <td>{{ vaccine.uname }}</td>
         <td>{{ vaccine.name }}</td>
         <td>{{ vaccine.date }}</td>
         <td>{{ vaccine.status }}</td>
+        <td><app-certificate></app-certificate> </td>
       </tr>
     </tbody>
   </table>
@@ -20,7 +25,7 @@
     <button class="btn btn-outline-primary me-2" (click)="prevPage()" [disabled]="currentIndex === 0">
       &#8592;
     </button>
-    <button class="btn btn-outline-primary" (click)="nextPage()" [disabled]="currentIndex + 3 >= vaccinationData.length">
+    <button class="btn btn-outline-primary" (click)="nextPage()" [disabled]="currentIndex + 5 >= vaccinationData.length">
       &#8594;
     </button>
   </div>

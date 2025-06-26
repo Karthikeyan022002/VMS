@@ -1,18 +1,15 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-booking',
-  templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css']
+  selector: 'app-reschedulebook',
+  templateUrl: './reschedulebook.component.html',
+  styleUrls: ['./reschedulebook.component.css']
 })
-export class BookingComponent implements OnInit {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+export class ReschedulebookComponent implements OnInit
 
+{
+  
   vaccineTypes: string[] = ['Covishield', 'Polio'];
  
   states: string[] = ['Maharashtra', 'Karnataka'];
@@ -25,7 +22,7 @@ export class BookingComponent implements OnInit {
   selectedState: string = '';
   selectedCity: string = '';
   selectedDate: string = '';
-  // selectedTime: string = '';
+  selectedTime: string = '';
  
   availableTimes: string[] = [];
   minDate: string = '';
@@ -42,7 +39,7 @@ export class BookingComponent implements OnInit {
  
   onVaccineChange() {
     this.availableTimes = this.selectedVaccine ? this.vaccineAvailability[this.selectedVaccine] : [];
-    // this.selectedTime = '';
+    this.selectedTime = '';
   }
  
   onStateChange() {
@@ -71,17 +68,16 @@ export class BookingComponent implements OnInit {
   }
  
   bookAppointment() {
-    if (!this.selectedVaccine || !this.selectedState || !this.selectedCity || !this.selectedDate) {
+    if (!this.selectedVaccine || !this.selectedState || !this.selectedCity || !this.selectedDate || !this.selectedTime) {
       alert('Please fill all details before booking.');
     } else {
-      alert(` Appointment booked for ${this.selectedVaccine} in ${this.selectedCity}, ${this.selectedState} on ${this.selectedDate}`);
+      alert(` Appointment booked for ${this.selectedVaccine} in ${this.selectedCity}, ${this.selectedState} on ${this.selectedDate} at ${this.selectedTime}`);
     this.selectedVaccine = '';
     this.selectedState = '';
     this.selectedCity = '';
     this.selectedDate = '';
-    // this.selectedTime = '';
-    this.router.navigate(['/view-booking']);
+    this.selectedTime = '';
     }
   }
-}
 
+}

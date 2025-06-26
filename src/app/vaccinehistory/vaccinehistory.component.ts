@@ -8,24 +8,24 @@ import { Component } from '@angular/core';
 export class VaccinehistoryComponent {
 
 vaccinationData = [
-    { name: 'Covaxin', date: '2025-06-01', status: 'Taken' },
-    { name: 'Covishield', date: '2025-06-15', status: 'Remaining' },
-    { name: 'Sputnik', date: '2025-05-20', status: 'Deleted' },
- { name: 'Covax', date: '2025-06-01', status: 'Taken' },
-    { name: 'Covis', date: '2025-06-15', status: 'Taken' },
-    { name: 'Sputnik', date: '2025-05-20', status: 'Deleted' } ];
+    { uname: 'prakash',     name: 'Covaxin', date: '2025-06-01', status: 'Taken', certificate:'download certificate' },
+    { uname: 'hemant', name: 'Covishield', date: '2025-06-15', status: 'Remaining', certificate:'download certificate' },
+    { uname: 'parteek', name: 'Sputnik', date: '2025-05-20', status: 'Deleted' , certificate:'download certificate'},
+     { uname: 'sahil', name: 'Covax', date: '2025-06-01', status: 'Taken' , certificate:'download certificate'},
+    { uname: 'prasanjeet', name: 'Covis', date: '2025-06-15', status: 'Taken' , certificate:'download certificate'},
+    { uname: 'shruti', name: 'Sputnik', date: '2025-05-20', status: 'Deleted', certificate:'download certificate' } ];
 
 currentIndex = 0;
 
 nextPage() {
-  if (this.currentIndex + 3 < this.vaccinationData.length) {
-    this.currentIndex += 3;
+  if (this.currentIndex + 5 < this.vaccinationData.length) {
+    this.currentIndex += 5;
   }
 }
 
 prevPage() {
-  if (this.currentIndex - 3 >= 0) {
-    this.currentIndex -= 3;
+  if (this.currentIndex - 5 >= 0) {
+    this.currentIndex -= 5;
   }
 }
 

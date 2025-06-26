@@ -1,5 +1,12 @@
-<div class="booking-wrapper">
+<div class="container-fluid">
+  <div class="row">
+<div class="col-md-2 col-lg-2 mt-5">
+  <app-usersidebar></app-usersidebar>
+</div>
+<div class="col-md-10 col-lg-10">
+<div class="booking-wrapper">   
   <div class="booking-container">
+    
     <h2 class="mb-4 text-center text-primary">Book Your Vaccine Appointment</h2>
  
     <!-- Vaccine Type -->
@@ -34,7 +41,7 @@
       <label>Select Date:</label>
       <input
         class="form-control"
-        type="date"
+        type="datetime-local"
         [min]="minDate"
         [(ngModel)]="selectedDate"
         (change)="onVaccineChange()"
@@ -43,7 +50,7 @@
     </div>
  
     <!-- Time -->
-    <div class="form-group-inline">
+    <!-- <div class="form-group-inline">
       <label>Select Time:</label>
       <select class="form-control" [(ngModel)]="selectedTime" [disabled]="!selectedDate">
         <option value="">-- Select Time --</option>
@@ -51,13 +58,15 @@
           {{ time }} <span *ngIf="isPastTime(time)"> (Not Available)</span>
         </option>
       </select>
-    </div>
+    </div> -->
  
     <button
       class="btn btn-primary mt-3 w-100"
       (click)="bookAppointment()"
-      [disabled]="!selectedVaccine || !selectedState || !selectedCity || !selectedDate || !selectedTime">
+      [disabled]="!selectedVaccine || !selectedState || !selectedCity || !selectedDate">
       Book Appointment
     </button>
   </div>
 </div>
+</div>
+</div></div>

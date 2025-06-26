@@ -4,7 +4,7 @@
   <app-usersidebar></app-usersidebar>
 </div>
 <div class="col-md-10 col-lg-10">
-  <div class="booking-wrapper">
+    <div class="booking-wrapper">
 <div class="container mt-5">
   <h2 class="text-center text-primary mb-4">View Bookings</h2>
  
@@ -33,7 +33,7 @@
             <td>{{ booking.time }}</td>
             <td>{{ booking.location }}</td>
             <td>
-              <a href="#" class="text-danger" (click)="deleteUserBooking(i); $event.preventDefault()">Delete Booking</a>
+              <a routerLink="/reschedulebook" class="text-danger" >Reschedule booking</a>
             </td>
           </tr>
         </tbody>
@@ -68,7 +68,7 @@
             <td>{{ booking.time }}</td>
             <td>{{ booking.location }}</td>
             <td>
-              <a href="#" class="text-danger" (click)="deleteFamilyBooking(i); $event.preventDefault()">Delete Booking</a>
+              <a routerLink="/reschedulebook" class="text-danger" >Reschedule Booking</a>
             </td>
           </tr>
         </tbody>
@@ -80,3 +80,4 @@
 </div>
   </div>
 </div>
+

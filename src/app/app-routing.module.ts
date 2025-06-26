@@ -14,6 +14,9 @@ import { BookingComponent } from './booking/booking.component';
 import { FamilyBookingComponent } from './family-booking/family-booking.component';
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { CertificateComponent } from './certificate/certificate.component';
+import { ReschedulebookComponent } from './reschedulebook/reschedulebook.component';
+import { RescheduleviewComponent } from './rescheduleview/rescheduleview.component';
+import { UsersidebarComponent } from './usersidebar/usersidebar.component';
 
 
 const routes: Routes = [
@@ -32,6 +35,9 @@ const routes: Routes = [
 {path: 'family-booking', component: FamilyBookingComponent},
 {path:'view-booking', component: ViewBookingComponent},
 {path:'certificate',component:CertificateComponent},
+{path:'reschedulebook',component:ReschedulebookComponent},
+{path:'rescheduleview',component:RescheduleviewComponent},
+{path:'usersidebar',component:UsersidebarComponent},
 
 
   // Wildcard route for unknown paths

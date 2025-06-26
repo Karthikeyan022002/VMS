@@ -25,6 +25,9 @@ import { BookingComponent } from './booking/booking.component';
 import { FamilyBookingComponent } from './family-booking/family-booking.component';
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { CertificateComponent } from './certificate/certificate.component';
+import { ReschedulebookComponent } from './reschedulebook/reschedulebook.component';
+import { RescheduleviewComponent } from './rescheduleview/rescheduleview.component';
+import { UsersidebarComponent } from './usersidebar/usersidebar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,11 @@ import { CertificateComponent } from './certificate/certificate.component';
     BookingComponent,
     FamilyBookingComponent,
     ViewBookingComponent,
-    CertificateComponent
+    CertificateComponent,
+    ReschedulebookComponent,
+    RescheduleviewComponent,
+    UsersidebarComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -51,12 +58,13 @@ import { CertificateComponent } from './certificate/certificate.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-     MatToolbarModule,
+    MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
     MatCardModule,
     MatTableModule,
-    BrowserModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
