@@ -15,8 +15,7 @@ import { FamilyBookingComponent } from './family-booking/family-booking.componen
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { CertificateComponent } from './certificate/certificate.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
-import { RescheduleviewComponent } from './rescheduleview/rescheduleview.component';
-import { ReschedulebookComponent } from './reschedulebook/reschedulebook.component';
+
 import { MakingSlotsComponent } from './making-slots/making-slots.component';
 
 
@@ -33,7 +32,7 @@ const routes: Routes = [
   { path: 'vaccinehistory', component: VaccinehistoryComponent },
   { path: 'booking', component: BookingComponent },
       { path: 'family-booking', component: FamilyBookingComponent },
-      { path: 'view-schedule', component: RescheduleviewComponent },
+      
       { path: 'user-profile', component: UserProfileComponent },
       { path: 'view-booking', component: ViewBookingComponent },
       {path: 'user-dashboard', component: UserComponent },
@@ -43,7 +42,7 @@ const routes: Routes = [
   {path:'certificate',component:CertificateComponent},
   {path:'admin-dashboard',component: AdmindashboardComponent},
   
-  {path:'reschedulebook',component:ReschedulebookComponent},
+ 
   { path:'making-slots',component: MakingSlotsComponent},
 
 

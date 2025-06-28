@@ -31,8 +31,7 @@ import { AdminManagerComponent } from './admin-manager/admin-manager.component';
 import { AddslotComponent } from './addslot/addslot.component';
 import { AddvaccineComponent } from './addvaccine/addvaccine.component';
 import { UsersidebarComponent } from './usersidebar/usersidebar.component';
-import { RescheduleviewComponent } from './rescheduleview/rescheduleview.component';
-import { ReschedulebookComponent } from './reschedulebook/reschedulebook.component';
+
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { MakingSlotsComponent } from './making-slots/making-slots.component';
 
@@ -60,8 +59,7 @@ import { MakingSlotsComponent } from './making-slots/making-slots.component';
     AddslotComponent,
     AddvaccineComponent,
     UsersidebarComponent,
-    RescheduleviewComponent,
-    ReschedulebookComponent,
+  
     AdminhomeComponent,
     MakingSlotsComponent,
   ],

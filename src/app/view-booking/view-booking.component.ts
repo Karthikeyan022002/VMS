@@ -26,6 +26,13 @@ export class ViewBookingComponent implements OnInit {
   userId: number = 1; // Replace with actual userId from auth context if available
   slots: SlotApiResponse[] = [];
 
+  // Reschedule modal state
+  showRescheduleModal = false;
+  selectedBooking: any = null;
+  selectedBookingType: 'user' | 'family' | null = null;
+  selectedBookingIndex: number | null = null;
+  selectedSlotId: number | null = null;
+
   constructor(private viewFamilyBookingService: ViewFamilyBookingService, private http: HttpClient) {}
 
   ngOnInit() {
@@ -88,5 +95,56 @@ export class ViewBookingComponent implements OnInit {
         alert('Failed to delete family booking.');
       }
     });
+  }
+
+  openRescheduleModal(booking: any, type: 'user' | 'family', index: number) {
+    this.selectedBooking = booking;
+    this.selectedBookingType = type;
+    this.selectedBookingIndex = index;
+    this.selectedSlotId = null;
+    this.showRescheduleModal = true;
+  }
+
+  closeRescheduleModal() {
+    this.showRescheduleModal = false;
+    this.selectedBooking = null;
+    this.selectedBookingType = null;
+    this.selectedBookingIndex = null;
+    this.selectedSlotId = null;
+  }
+
+  submitReschedule() {
+    if (!this.selectedSlotId || this.selectedBookingIndex === null || !this.selectedBookingType) return;
+
+    if (this.selectedBookingType === 'user') {
+      // For demo: just update the slot in the local array
+      const slot = this.slots.find(s => s.slotId == this.selectedSlotId);
+      if (slot) {
+        this.userBookings[this.selectedBookingIndex] = {
+          ...this.userBookings[this.selectedBookingIndex],
+          vaccine: slot.vaccineName,
+          date: slot.slotDate,
+          location: slot.locationCity
+        };
+      }
+      this.closeRescheduleModal();
+      alert('User booking rescheduled!');
+    } else if (this.selectedBookingType === 'family') {
+      // For demo: update slot in local array, in real app call backend API
+      const slot = this.slots.find(s => s.slotId == this.selectedSlotId);
+      if (slot) {
+        this.familyBookings[this.selectedBookingIndex] = {
+          ...this.familyBookings[this.selectedBookingIndex],
+          slotId: slot.slotId,
+          vaccineName: slot.vaccineName,
+          slotDate: slot.slotDate,
+          vaccinationCenterName: slot.vaccinationCenterName,
+          locationState: slot.locationState,
+          locationCity: slot.locationCity
+        };
+      }
+      this.closeRescheduleModal();
+      alert('Family booking rescheduled!');
+    }
   }
 }

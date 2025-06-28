@@ -6,13 +6,13 @@ body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
  
- .fambook-wrapper {
+ /* .fambook-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 86vh;
   padding: 20px;
-}
+} */
  .container {
  
   width: 100%;

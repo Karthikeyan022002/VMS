@@ -124,6 +124,11 @@ a {
     max-width: 90%;
     flex: 0 0 90%;
   }
+  .login-border-wrapper {
+    max-width: 95vw;
+    border-radius: 14px;
+    padding: 2px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -137,5 +142,27 @@ a {
   }
   .card {
     padding: 1rem !important;
+    border-radius: 8px;
+  }
+  .login-border-wrapper {
+    max-width: 100vw;
+    border-radius: 8px;
+    padding: 1px;
+  }
+  .custom-input {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
   }
 }
+
+@media (max-width: 400px) {
+  .card {
+    padding: 0.5rem !important;
+    border-radius: 4px;
+  }
+  .login-border-wrapper {
+    border-radius: 4px;
+    padding: 0;
+  }
+}
+

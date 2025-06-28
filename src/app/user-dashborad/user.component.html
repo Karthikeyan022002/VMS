@@ -71,10 +71,7 @@
         <a href="view-booking" class="nav-link" [class.active]="selectedTab === 'view-booking'"
            (click)="selectTab('view-booking'); $event.preventDefault()">View Booking</a>
       </li>
-      <li class="nav-item">
-        <a href="view-schedule" class="nav-link" [class.active]="selectedTab === 'view-schedule'"
-           (click)="selectTab('view-schedule'); $event.preventDefault()">Reschedule Booking</a>
-      </li>
+     
       <li class="nav-item">
         <a href="user-profile" class="nav-link" [class.active]="selectedTab === 'user-profile'"
            (click)="selectTab('user-profile'); $event.preventDefault()">User Profile</a>
@@ -103,9 +100,7 @@
       <app-family-booking></app-family-booking>
     </section>
 
-    <section *ngIf="selectedTab === 'view-schedule'">
-      <app-rescheduleview></app-rescheduleview>
-    </section>
+    
      <section *ngIf="selectedTab === 'view-booking'">
      <app-view-booking></app-view-booking>
     </section>

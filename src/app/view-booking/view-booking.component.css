@@ -20,6 +20,16 @@ a.text-danger {
 a.text-danger:hover {
   text-decoration: underline;
 }
+
+a.text-primary {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a.text-primary:hover {
+  text-decoration: underline;
+}
+
 .container {
   width: 100%;
   margin-bottom: 120px;

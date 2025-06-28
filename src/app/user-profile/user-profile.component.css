@@ -28,3 +28,36 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 992px) {
+  .parent-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .child1, .child2 {
+    min-width: 0;
+    max-width: 100vw;
+    padding: 0;
+  }
+  .child2 {
+    max-height: none;
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .parent-container {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+  }
+  .child1, .child2 {
+    min-width: 0;
+    max-width: 100vw;
+    padding: 0;
+  }
+  .child2 {
+    max-height: none;
+    padding: 4px 0;
+  }
+}

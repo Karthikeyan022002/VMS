@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./admindashboard.component.css']
 })
 export class AdmindashboardComponent {
- selectedTab: string = 'home';
- 
+  selectedTab: string = 'update'; // Default to 'update' or any other tab except 'home'
+
   selectTab(tab: string) {
-    this.selectedTab = tab;
+    if (tab !== 'home') {
+      this.selectedTab = tab;
+    }
   }
 }

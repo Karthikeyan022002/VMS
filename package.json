@@ -21,8 +21,9 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "@emailjs/browser": "^4.4.1",
-    "chart.js": "^4.5.0",
+    "chart.js": "^4.4.0",
     "jspdf": "^3.0.1",
+    "ng2-charts": "^3.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

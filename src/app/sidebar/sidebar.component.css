@@ -1,4 +1,3 @@
-
 .sidebar-full {
   min-height: 100vh;
   background: #f8f9fa;
@@ -84,6 +83,31 @@
   border-radius: 0.5rem;
 }
 
+@media (max-width: 992px) {
+  .sidebar-full {
+    padding: 1.2rem 0.3rem;
+  }
+  .card {
+    max-width: 95vw;
+    border-radius: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-full {
+    padding: 0.7rem 0.1rem;
+  }
+  .card {
+    max-width: 100vw;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .list-group-item {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .sidebar-full {
     padding: 1rem 0.2rem;
@@ -91,6 +115,7 @@
   .card {
     max-width: 100%;
     margin-bottom: 1rem;
+    border-radius: 0.4rem;
   }
   .list-group-item {
     flex-direction: column;
@@ -102,5 +127,15 @@
   .list-group-item select.form-control-sm {
     width: 100%;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar-full {
+    padding: 0.3rem 0.05rem;
+  }
+  .card {
+    border-radius: 0.2rem;
+    padding: 0.2rem;
   }
 }

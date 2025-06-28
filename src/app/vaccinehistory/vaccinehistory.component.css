@@ -18,3 +18,47 @@ table {
   align-items: center;
   margin-top: 16px;
 }
+
+@media (max-width: 1200px) {
+  .table-container {
+    max-width: 100%;
+    padding: 16px 8px;
+  }
+  table {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .table-container {
+    padding: 10px 2px;
+    border-radius: 6px;
+  }
+  table {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    padding: 6px 1px;
+    border-radius: 4px;
+  }
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-container {
+    padding: 2px;
+    border-radius: 2px;
+  }
+  table {
+    font-size: 0.85rem;
+  }
+  .pagination-arrows {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

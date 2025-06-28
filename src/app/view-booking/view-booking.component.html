@@ -26,7 +26,8 @@
             <td>{{ booking.time }}</td>
             <td>{{ booking.location }}</td>
             <td>
-              <a href="#" class="text-danger" (click)="deleteUserBooking(i); $event.preventDefault()">Delete Booking</a>
+              <button type="button" class="btn btn-outline-danger btn-sm me-1" (click)="deleteUserBooking(i)">Delete</button>
+              <button type="button" class="btn btn-outline-primary btn-sm" (click)="openRescheduleModal(booking, 'user', i)">Reschedule</button>
             </td>
           </tr>
         </tbody>
@@ -61,11 +62,37 @@
             <td>{{ booking.locationState }}</td>
             <td>{{ booking.locationCity }}</td>
             <td>
-              <a href="#" class="text-danger" (click)="deleteFamilyBooking(i); $event.preventDefault()">Delete Booking</a>
+              <button type="button" class="btn btn-outline-danger btn-sm me-1" (click)="deleteFamilyBooking(i)">Delete</button>
+              <button type="button" class="btn btn-outline-primary btn-sm" (click)="openRescheduleModal(booking, 'family', i)">Reschedule</button>
             </td>
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+
+  <!-- Reschedule Modal -->
+  <div class="modal" tabindex="-1" [ngClass]="{'show d-block': showRescheduleModal}" *ngIf="showRescheduleModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Reschedule Booking</h5>
+          <button type="button" class="btn-close" (click)="closeRescheduleModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="submitReschedule()">
+            <div class="mb-3">
+              <label for="slotSelect" class="form-label">Select New Slot</label>
+              <select id="slotSelect" class="form-select" [(ngModel)]="selectedSlotId" name="slotSelect" required>
+                <option *ngFor="let slot of slots" [value]="slot.slotId">
+                  {{ slot.vaccineName }} - {{ slot.locationCity }}, {{ slot.locationState }} ({{ slot.slotDate | date:'medium' }})
+                </option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Reschedule</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>
