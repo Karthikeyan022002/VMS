@@ -1,24 +1,38 @@
-<nav>
-        <h4 class=" mb-4 text-center" style="font-weight: bold;">User Menu</h4>
-      <div class="sidebar-sticky text-left">
-       
+<div class="container my-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white text-center">
+      <h4 class="mb-0" style="font-weight: bold;">User Menu</h4>
+    </div>
+    <div class="card-body p-0">
+      <nav>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/booking">Book Appointment</a>
+            <a class="nav-link py-3 px-4" routerLink="/booking">
+              <i class="bi bi-calendar-plus me-2"></i> Book Appointment
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/family-booking">Book for Family</a>
-          </li>
-        
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/view-booking">All Bookings</a>
+            <a class="nav-link py-3 px-4" routerLink="/family-booking">
+              <i class="bi bi-people me-2"></i> Book for Family
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/user-profile">View Profile</a>
+            <a class="nav-link py-3 px-4" routerLink="/view-booking">
+              <i class="bi bi-list-ul me-2"></i> All Bookings
+            </a>
           </li>
-           <li class="nav-item">
-            <a class="nav-link" routerLink="/user-dashboard">Back to Dashboard</a>
+          <li class="nav-item">
+            <a class="nav-link py-3 px-4" routerLink="/user-profile">
+              <i class="bi bi-person-circle me-2"></i> View Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link py-3 px-4" routerLink="/user-dashboard">
+              <i class="bi bi-arrow-left-circle me-2"></i> Back to Dashboard
+            </a>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
+  </div>
+</div>

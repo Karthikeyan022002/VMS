@@ -1,73 +1,81 @@
 <div class="container mt-5">
   <h2 class="text-center text-primary mb-4">View Bookings</h2>
- 
+
   <!-- User Bookings -->
   <div class="card mb-4">
     <div class="card-header bg-info text-white">
       My Bookings
     </div>
-    <div class="card-body table-responsive">
-      <table class="table table-bordered table-striped table-hover text-center">
-        <thead class="thead-dark">
-          <tr>
-            <th>Name</th>
-            <th>Vaccine</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Location</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let booking of userBookings; let i = index">
-            <td>{{ booking.name }}</td>
-            <td>{{ booking.vaccine }}</td>
-            <td>{{ booking.date }}</td>
-            <td>{{ booking.time }}</td>
-            <td>{{ booking.location }}</td>
-            <td>
-              <button type="button" class="btn btn-outline-danger btn-sm me-1" (click)="deleteUserBooking(i)">Delete</button>
-              <button type="button" class="btn btn-outline-primary btn-sm" (click)="openRescheduleModal(booking, 'user', i)">Reschedule</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Vaccine</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Location</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of userBookings; let i = index">
+              <td>{{ booking.name }}</td>
+              <td>{{ booking.vaccine }}</td>
+              <td>{{ booking.date }}</td>
+              <td>{{ booking.time }}</td>
+              <td>{{ booking.location }}</td>
+              <td>
+                <div class="d-flex flex-wrap gap-1 justify-content-center">
+                  <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteUserBooking(i)">Delete</button>
+                  <button type="button" class="btn btn-outline-primary btn-sm" (click)="openRescheduleModal(booking, 'user', i)">Reschedule</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
- 
+
   <!-- Family Bookings -->
   <div class="card">
     <div class="card-header bg-info text-white">
       Family Bookings
     </div>
-    <div class="card-body table-responsive">
-      <table class="table table-bordered table-striped table-hover text-center">
-        <thead class="thead-dark">
-          <tr>
-            <th>Name</th>
-            <th>Vaccine Type</th>
-            <th>Slot Date</th>
-            <th>Vaccination Center</th>
-            <th>State</th>
-            <th>City</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let booking of familyBookings; let i = index">
-            <td>{{ booking.fullName }}</td>
-            <td>{{ booking.vaccineName }}</td>
-            <td>{{ booking.slotDate | date:'medium' }}</td>
-            <td>{{ booking.vaccinationCenterName }}</td>
-            <td>{{ booking.locationState }}</td>
-            <td>{{ booking.locationCity }}</td>
-            <td>
-              <button type="button" class="btn btn-outline-danger btn-sm me-1" (click)="deleteFamilyBooking(i)">Delete</button>
-              <button type="button" class="btn btn-outline-primary btn-sm" (click)="openRescheduleModal(booking, 'family', i)">Reschedule</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Vaccine Type</th>
+              <th>Slot Date</th>
+              <th>Vaccination Center</th>
+              <th>State</th>
+              <th>City</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of familyBookings; let i = index">
+              <td>{{ booking.fullName }}</td>
+              <td>{{ booking.vaccineName }}</td>
+              <td>{{ booking.slotDate | date:'medium' }}</td>
+              <td>{{ booking.vaccinationCenterName }}</td>
+              <td>{{ booking.locationState }}</td>
+              <td>{{ booking.locationCity }}</td>
+              <td>
+                <div class="d-flex flex-wrap gap-1 justify-content-center">
+                  <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteFamilyBooking(i)">Delete</button>
+                  <button type="button" class="btn btn-outline-primary btn-sm" (click)="openRescheduleModal(booking, 'family', i)">Reschedule</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 

@@ -1,32 +1,57 @@
-<div class="table-container">
-  <h3 class="text-primary mb-6">Vaccination History</h3>
-  <table class="table table-bordered table-hover">
-    <thead class="table-light">
-      <tr>
-        <th>Name</th>
-        <th>Vaccine Name</th>
-        <th>Date </th>
-        <th>Status</th>
-        <th>Download certificate</th>
- 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let vaccine of vaccinationData | slice:currentIndex:currentIndex+5">
-        <td>{{ vaccine.uname }}</td>
-        <td>{{ vaccine.name }}</td>
-        <td>{{ vaccine.date }}</td>
-        <td>{{ vaccine.status }}</td>
-        <td><app-certificate></app-certificate> </td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="pagination-arrows">
-    <button class="btn btn-outline-primary me-2" (click)="prevPage()" [disabled]="currentIndex === 0">
-      &#8592;
-    </button>
-    <button class="btn btn-outline-primary" (click)="nextPage()" [disabled]="currentIndex + 5 >= vaccinationData.length">
-      &#8594;
-    </button>
+<div class="container-fluid px-0">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 class="text-primary mb-4 text-center">Vaccination History</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th>Name</th>
+                  <th>Vaccine Name</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Download certificate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let vaccine of vaccinationData | slice:currentIndex:currentIndex+5">
+                  <td>{{ vaccine.uname }}</td>
+                  <td>{{ vaccine.name }}</td>
+                  <td>{{ vaccine.date }}</td>
+                  <td>
+                    <span class="badge"
+                      [ngClass]="{
+                        'bg-success': vaccine.status === 'Completed',
+                        'bg-warning text-dark': vaccine.status === 'Pending',
+                        'bg-danger': vaccine.status === 'Missed'
+                      }">
+                      {{ vaccine.status }}
+                    </span>
+                  </td>
+                  <td><app-certificate></app-certificate></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mt-3 flex-wrap">
+            <button class="btn btn-outline-primary mb-2 mb-md-0"
+              (click)="prevPage()" [disabled]="currentIndex === 0">
+              &#8592; Previous
+            </button>
+            <span class="text-muted small">
+              Showing {{ currentIndex + 1 }} -
+              {{ (currentIndex + 5) > vaccinationData.length ? vaccinationData.length : (currentIndex + 5) }}
+              of {{ vaccinationData.length }}
+            </span>
+            <button class="btn btn-outline-primary mb-2 mb-md-0"
+              (click)="nextPage()" [disabled]="currentIndex + 5 >= vaccinationData.length">
+              Next &#8594;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

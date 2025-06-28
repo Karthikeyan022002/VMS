@@ -50,14 +50,22 @@
  -->
 
 
- <div class="admin-wrapper d-flex">
+<div class="admin-wrapper d-flex flex-column flex-md-row">
+
+  <!-- Responsive Navbar for small screens -->
+  <nav class="navbar navbar-light bg-light d-md-none">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+      aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span> Menu
+    </button>
+  </nav>
 
   <!-- Sidebar -->
-  <nav class="sidebar bg-light p-3">
+  <nav id="sidebarMenu" class="sidebar bg-light p-3 collapse d-md-block">
     <ul class="nav flex-column">
       <li class="nav-item">
         <a href="dashboard" class="nav-link" [class.active]="selectedTab === 'dashboard'"
-           (click)="selectTab('dashboard'); $event.preventDefault()">Dashoboard</a>
+           (click)="selectTab('dashboard'); $event.preventDefault()">Dashboard</a>
       </li>
       <li class="nav-item">
         <a href="booking" class="nav-link" [class.active]="selectedTab === 'booking'"
@@ -71,25 +79,20 @@
         <a href="view-booking" class="nav-link" [class.active]="selectedTab === 'view-booking'"
            (click)="selectTab('view-booking'); $event.preventDefault()">View Booking</a>
       </li>
-     
       <li class="nav-item">
         <a href="user-profile" class="nav-link" [class.active]="selectedTab === 'user-profile'"
            (click)="selectTab('user-profile'); $event.preventDefault()">User Profile</a>
       </li>
-       
     </ul>
   </nav>
 
-  <!-- Main content area -->
-  <main class="main-content flex-grow-1 p-4">
-    
-    
-
+  <!-- Main content area with Bootstrap scrollbar -->
+  <main class="main-content flex-grow-1 p-4 overflow-auto" style="max-height: 80vh;">
     <section *ngIf="selectedTab === 'dashboard'">
       <h1 class="text-center mb-4">User Dashboard</h1>
-        <div class="booking-container text-center">
-          <img src="/assets/vaccine.jpg" alt="Slide 1" class="center-image">
-        </div>
+      <div class="booking-container text-center">
+        <img src="/assets/vaccine.jpg" alt="Slide 1" class="center-image img-fluid">
+      </div>
     </section>
 
     <section *ngIf="selectedTab === 'booking'">
@@ -100,13 +103,11 @@
       <app-family-booking></app-family-booking>
     </section>
 
-    
-     <section *ngIf="selectedTab === 'view-booking'">
-     <app-view-booking></app-view-booking>
+    <section *ngIf="selectedTab === 'view-booking'">
+      <app-view-booking></app-view-booking>
     </section>
-     <section *ngIf="selectedTab === 'user-profile'">
-       <app-user-profile></app-user-profile>
+    <section *ngIf="selectedTab === 'user-profile'">
+      <app-user-profile></app-user-profile>
     </section>
-    
   </main>
 </div>
